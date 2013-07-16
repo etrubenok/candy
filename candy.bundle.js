@@ -2793,7 +2793,7 @@ Candy.View.Pane = (function(self, $) {
 		onFocus: function() {
 			self.Window._hasFocus = true;
 			if (Candy.View.getCurrent().roomJid) {
-				self.Room.setFocusToForm(Candy.View.getCurrent().roomJid);
+				//self.Room.setFocusToForm(Candy.View.getCurrent().roomJid);
 				self.Chat.clearUnreadMessages(Candy.View.getCurrent().roomJid);
 			}
 		},
@@ -3313,7 +3313,7 @@ Candy.View.Pane = (function(self, $) {
 					displayUsername: Candy.Core.isAnonymousConnection() || !presetJid,
 					presetJid: presetJid ? presetJid : false
 				}));
-				$('#login-form').children(':input:first').focus();
+				//$('#login-form').children(':input:first').focus();
 
 				// register submit handler
 				$('#login-form').submit(function(event) {
@@ -3353,7 +3353,7 @@ Candy.View.Pane = (function(self, $) {
 					_label: (message ? message : $.i18n._('enterRoomPassword', [roomName])),
 					_joinSubmit: $.i18n._('enterRoomPasswordSubmit')
 				}), true);
-				$('#password').focus();
+				//$('#password').focus();
 				
 				// register submit handler
 				$('#enter-password-form').submit(function() {
@@ -3379,7 +3379,7 @@ Candy.View.Pane = (function(self, $) {
 					_label: $.i18n._('nicknameConflict'),
 					_loginSubmit: $.i18n._('loginSubmit')
 				}));
-				$('#nickname').focus();
+				//$('#nickname').focus();
 				
 				// register submit handler
 				$('#nickname-conflict-form').submit(function() {
@@ -3611,7 +3611,7 @@ Candy.View.Pane = (function(self, $) {
 								_label: $.i18n._('reason'),
 								_submit: $.i18n._('kickActionLabel')
 							}), true);
-							$('#context-modal-field').focus();
+							//$('#context-modal-field').focus();
 							$('#context-modal-form').submit(function(event) {
 								Candy.Core.Action.Jabber.Room.Admin.UserAction(roomJid, user.getJid(), 'kick', $('#context-modal-field').val());
 								self.Chat.Modal.hide();
@@ -3630,7 +3630,7 @@ Candy.View.Pane = (function(self, $) {
 								_label: $.i18n._('reason'),
 								_submit: $.i18n._('banActionLabel')
 							}), true);
-							$('#context-modal-field').focus();
+							//$('#context-modal-field').focus();
 							$('#context-modal-form').submit(function(e) {
 								Candy.Core.Action.Jabber.Room.Admin.UserAction(roomJid, user.getJid(), 'ban', $('#context-modal-field').val());
 								self.Chat.Modal.hide();
@@ -3649,7 +3649,7 @@ Candy.View.Pane = (function(self, $) {
 								_label: $.i18n._('subject'),
 								_submit: $.i18n._('setSubjectActionLabel')
 							}), true);
-							$('#context-modal-field').focus();
+							//$('#context-modal-field').focus();
 							$('#context-modal-form').submit(function(e) {
 								Candy.Core.Action.Jabber.Room.Admin.SetSubject(roomJid, $('#context-modal-field').val());
 								self.Chat.Modal.hide();
@@ -3773,8 +3773,8 @@ Candy.View.Pane = (function(self, $) {
 					self.Chat.setActiveTab(roomJid);
 					self.Chat.Toolbar.update(roomJid);
 					self.Chat.clearUnreadMessages(roomJid);
-					self.Room.setFocusToForm(roomJid);
-					self.Room.scrollToBottom(roomJid);
+					//self.Room.setFocusToForm(roomJid);
+					//self.Room.scrollToBottom(roomJid);
 
 					Candy.View.Event.Room.onShow({'roomJid': roomJid, 'element' : elem});
 				} else {
